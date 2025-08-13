@@ -1,0 +1,70 @@
+:root {
+    --sky-300: oklch(82.8% 0.111 230.318);
+    --sky-400: oklch(74.6% 0.16 232.661);
+    --sky-600: oklch(58.8% 0.158 241.966);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    overflow: hidden;
+    position: relative;
+    height: 100dvh;
+    width: 100dvw;
+    background-color: var(--sky-600);
+    position: relative;
+}
+
+.hero::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    opacity: .3;
+    background-image: url("./noise.svg");
+}
+
+.ray {
+    position: absolute;
+    filter: blur(2rem);
+    inset: -3rem 0 0 0;
+}
+
+.ray::before {
+    position: absolute;
+    content: "";
+    clip-path: polygon(40% 0, 60% 0, 95% 100%, 5% 100%);
+    inset: 0;
+    background: linear-gradient(180deg, var(--sky-300), transparent 70%);
+}
+
+.ray-noize {
+    position: absolute;
+    content: "";
+    clip-path: polygon(40% 0, 60% 0, 95% 100%, 5% 100%);
+    inset: 0;
+    opacity: .4;
+    background: url("noise.svg");
+    z-index: 1;
+}
+
+
+
+h1 {
+    position: absolute;
+    bottom: 18%;
+    right: 50%;
+    transform: translateX(50%);
+    font-size: 80px;
+    font-weight: normal;
+    text-align: center;
+    background: linear-gradient(to bottom, white 10%, var(--sky-300));
+    background-clip: text;
+    color: transparent;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    z-index: 0;
+    opacity: .9;
+}
