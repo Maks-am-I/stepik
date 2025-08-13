@@ -1,0 +1,29 @@
+.parent {
+    display: grid;
+    grid-gap: 0.25rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 5rem auto;
+    max-width: 20rem;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.parent div {
+    background: lightblue;
+    height: 4rem;
+    text-align: center;
+    line-height: 4rem;
+    font-size: 1.5rem;
+}
+
+.parent div:nth-child(4n):nth-last-child(-n+4) {
+    border-bottom-right-radius: 1rem;
+}
+
+.parent div:nth-last-child(1) {
+    border-bottom-right-radius: 1rem;
+}
+
+.parent div:nth-child(-n+4):nth-last-child(1) {
+    border-top-right-radius: 1rem;
+}
